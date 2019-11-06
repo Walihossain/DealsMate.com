@@ -77,7 +77,6 @@ class DashHeader extends Component {
               store={store}
             />
             <HeaderProfile user={this.props.currentUser.user.body.user} />
-            <SignOutButton signOut={this.signOut.bind(this)} {...this.props} />
           </div>
         </Toolbar>
       </AppBar>

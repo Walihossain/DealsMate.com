@@ -1,5 +1,7 @@
 import React from "react";
 import ProfilePicture from "../../../../assets/profiledemopic.png";
+import HeaderPopOverProfile from "./HeaderPopOverProfile";
+
 
 const styleContainer = {
   display: "flex",
@@ -24,10 +26,11 @@ const HeaderProfile = props => {
   console.log(props);
   return (
     <div style={styleContainer}>
-      <img src={ProfilePicture} alt="profilePic" style={stylePic} />
-      <p style={styleName}>
+      <HeaderPopOverProfile name={props.user.name} />
+      {/* <img src={ProfilePicture} alt="profilePic" style={stylePic} /> */}
+      {/* <p style={styleName}>
         {props.user.name ? props.user.name : "Smiling Guy"}
-      </p>
+      </p> */}
     </div>
   );
 };
