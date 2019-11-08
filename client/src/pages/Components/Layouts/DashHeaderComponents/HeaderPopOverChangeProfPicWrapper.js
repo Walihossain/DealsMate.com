@@ -73,7 +73,7 @@ export default withStyles(styles)(
       apiCallWithHeader("post", `/${type}`, formData, headers).then(res => {
         if (res.status === 200) {
           this.handleToggle();
-          // this.props.loadProfilePicUrl();
+          this.props.loadProfilePicUrl();
           console.log(res);
         } else {
           console.log("error");
