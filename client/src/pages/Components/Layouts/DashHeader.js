@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { loadNotifications } from "../../../stores/actions/getNotifications";
 import { SignOutButton } from "./DashHeaderComponents/SignOut";
 import { SignOutAction } from "../../../stores/actions/SignOut";
+import { loadCurrentUserImage } from "../../../stores/actions/getUserImage";
 import { configureStore } from "../../../stores";
 
 const store = configureStore();
@@ -25,6 +26,7 @@ class DashHeader extends Component {
         "x-auth-token": localStorage.getItem("jwtToken")
       }
     };
+    this.props.loadCurrentUserImage(headers);
 
     this.props.loadNotifications(headers);
     setInterval(() => {
@@ -76,7 +78,11 @@ class DashHeader extends Component {
               shoppingList={this.props.currentShoppingList.list}
               store={store}
             />
-            <HeaderProfile user={this.props.currentUser.user.body.user} />
+            <HeaderProfile
+              user={this.props.currentUser.user.body.user}
+              profilePicUrl={this.props.currentProfilePicUrl.userImageUrl}
+              loadProfilePicUrl={this.props.loadCurrentUserImage}
+            />
           </div>
         </Toolbar>
       </AppBar>
@@ -86,11 +92,12 @@ class DashHeader extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentNotifications: state.currentNotifications
+    currentNotifications: state.currentNotifications,
+    currentProfilePicUrl: state.currentProfilePicUrl
   };
 }
 
 export default connect(
   mapStateToProps,
-  { loadNotifications, SignOutAction }
+  { loadNotifications, SignOutAction, loadCurrentUserImage }
 )(DashHeader);

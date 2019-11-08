@@ -16,6 +16,7 @@ import notificationRouter from "./routes/notification";
 
 import listRouter from "./routes/list";
 import cronJob from "./cronjob/cron";
+import uploadPicture from "./routes/uploadPicture";
 
 const path = require("path");
 
@@ -39,6 +40,7 @@ app.use("/user", userRouter);
 app.use("/item", itemRouter);
 app.use("/list", listRouter);
 app.use("/notification", notificationRouter);
+app.use("/uploadPicture", uploadPicture);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

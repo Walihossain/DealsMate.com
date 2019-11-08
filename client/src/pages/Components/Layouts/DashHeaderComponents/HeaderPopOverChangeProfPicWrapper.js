@@ -11,7 +11,7 @@ import { Typography } from "@material-ui/core";
 import Input from "@material-ui/core/Input";
 import AddPhoto from "../../../Dialogs/AddPhoto";
 import Fab from "@material-ui/core/Fab";
-// import { apiCallWithHeader } from "../../services/apiHeaders";
+import { apiCallWithHeader } from "../../../../services/apiHeaders";
 
 const styles = theme => ({
   dialogPaper: {
@@ -50,35 +50,36 @@ export default withStyles(styles)(
   class HeaderPopOverChangeProfPicWrapper extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { open: false, name: "", cover: null };
+      this.state = { open: false, name: "", picture: null };
       this.handleChange = this.handleChange.bind(this);
       this.handlePhotoLoading = this.handlePhotoLoading.bind(this);
-      // this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleToggle = this.handleToggle.bind(this);
       this.handleToggle = this.handleToggle.bind(this);
     }
 
-    // handleSubmit(e) {
-    //   e.preventDefault();
-    //   const type = "list";
-    //   const formData = new FormData();
-    //   formData.append("name", this.state.name);
-    //   formData.append("cover", this.state.cover.file);
-    //   const headers = {
-    //     headers: {
-    //       "content-type": "multipart/form-data",
-    //       "x-auth-token": localStorage.getItem("jwtToken")
-    //     }
-    //   };
-    //   apiCallWithHeader("post", `/${type}`, formData, headers).then(res => {
-    //     if (res.status === 200) {
-    //       this.props.handleClick();
-    //       this.props.onSubmit();
-    //       console.log(res.status);
-    //     } else {
-    //       console.log("error");
-    //     }
-    //   });
-    // }
+    handleSubmit(e) {
+      e.preventDefault();
+      const type = "uploadPicture";
+      const formData = new FormData();
+      //formData.append("name", this.state.name);
+      formData.append("picture", this.state.picture.file);
+      const headers = {
+        headers: {
+          "content-type": "multipart/form-data",
+          "x-auth-token": localStorage.getItem("jwtToken")
+        }
+      };
+      apiCallWithHeader("post", `/${type}`, formData, headers).then(res => {
+        if (res.status === 200) {
+          this.handleToggle();
+          // this.props.loadProfilePicUrl();
+          console.log(res);
+        } else {
+          console.log("error");
+        }
+      });
+    }
 
     handleChange(e) {
       this.setState({ [e.target.name]: e.target.value });
@@ -92,7 +93,7 @@ export default withStyles(styles)(
       const newPhoto = photo;
       this.setState(
         {
-          cover: newPhoto
+          picture: newPhoto
         },
         () => {
           // console.log(this.state);
@@ -103,7 +104,7 @@ export default withStyles(styles)(
     }
 
     render() {
-      const { name, open } = this.state;
+      const { open } = this.state;
       const { classes } = this.props;
       console.log("ShoppingListDialogProps");
       console.log(this.props);

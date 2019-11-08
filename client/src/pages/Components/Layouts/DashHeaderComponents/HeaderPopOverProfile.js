@@ -49,13 +49,17 @@ export default function HeaderPopOver(props) {
     // console.log("Dismiss is clicked");
   };
 
-  // console.log("HeaderPopOver props");
-  // console.log(props);
+  console.log("HeaderPopOverProfile props");
+  console.log(props);
 
   return (
     <div>
       <Button aria-describedby={id} variant="text" onClick={handleClick}>
-        <img src={ProfilePicture} alt="profilePic" style={stylePic} />
+        <img
+          src={props.profPicUrl || ProfilePicture}
+          alt="profilePic"
+          style={stylePic}
+        />
         {props.name}
       </Button>
       <Popover
@@ -81,7 +85,9 @@ export default function HeaderPopOver(props) {
       >
         <div>
           <HeaderPopOverSignOutWrapper />
-          <HeaderPopOverChangeProfPicWrapper />
+          <HeaderPopOverChangeProfPicWrapper
+            loadProfilePicUrl={props.loadProfilePicUrl}
+          />
           {/* <EachList
                   key={index}
                   imgUrl={item.url}

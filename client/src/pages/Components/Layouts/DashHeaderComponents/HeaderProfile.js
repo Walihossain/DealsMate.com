@@ -2,7 +2,6 @@ import React from "react";
 import ProfilePicture from "../../../../assets/profiledemopic.png";
 import HeaderPopOverProfile from "./HeaderPopOverProfile";
 
-
 const styleContainer = {
   display: "flex",
   alignItems: "center",
@@ -22,11 +21,15 @@ const styleName = {
   margin: "0 5px"
 };
 const HeaderProfile = props => {
-  console.log("Header Profile props");
+  console.log("Header Profile props with Prof Pic Url");
   console.log(props);
   return (
     <div style={styleContainer}>
-      <HeaderPopOverProfile name={props.user.name} />
+      <HeaderPopOverProfile
+        name={props.user.name}
+        profPicUrl={props.profilePicUrl}
+        loadProfilePicUrl={props.loadProfilePicUrl}
+      />
       {/* <img src={ProfilePicture} alt="profilePic" style={stylePic} /> */}
       {/* <p style={styleName}>
         {props.user.name ? props.user.name : "Smiling Guy"}
