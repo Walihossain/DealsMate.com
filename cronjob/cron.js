@@ -5,7 +5,7 @@ import notification from "../notification/notification";
 
 const startCronJob = async () => {
   //"*/0.00000000000000000000003* * * * *";
-  const cronJob = cron.schedule("*/2 * * * *", async () => {
+  const cronJob = cron.schedule("*/5 * * * *", async () => {
     try {
       const items = await Item.find();
       console.log(items);

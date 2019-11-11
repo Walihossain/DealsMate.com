@@ -28,6 +28,7 @@ const HeaderProfile = props => {
       <HeaderPopOverProfile
         name={props.user.name}
         profPicUrl={props.profilePicUrl}
+        profPicUrlTime={props.profilePicUrlTime}
         loadProfilePicUrl={props.loadProfilePicUrl}
       />
       {/* <img src={ProfilePicture} alt="profilePic" style={stylePic} /> */}

@@ -56,7 +56,12 @@ export default function HeaderPopOver(props) {
     <div>
       <Button aria-describedby={id} variant="text" onClick={handleClick}>
         <img
-          src={props.profPicUrl || ProfilePicture}
+          src={
+            props.profPicUrl
+              ? `${props.profPicUrl}?${props.profPicUrlTime}`
+              : `${ProfilePicture}`
+          }
+          // `${imageSrc}?${imageHash}`
           alt="profilePic"
           style={stylePic}
         />

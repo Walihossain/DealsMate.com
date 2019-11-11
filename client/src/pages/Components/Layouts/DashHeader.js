@@ -20,14 +20,13 @@ class DashHeader extends Component {
   }
 
   componentDidMount() {
-    // console.log("Expand did mount");
+    console.log("Expand did mount");
     const headers = {
       headers: {
         "x-auth-token": localStorage.getItem("jwtToken")
       }
     };
     this.props.loadCurrentUserImage(headers);
-
     this.props.loadNotifications(headers);
     setInterval(() => {
       console.log("notification being hit");
@@ -81,6 +80,7 @@ class DashHeader extends Component {
             <HeaderProfile
               user={this.props.currentUser.user.body.user}
               profilePicUrl={this.props.currentProfilePicUrl.userImageUrl}
+              profilePicUrlTime={this.props.currentProfilePicUrl.userImageDate}
               loadProfilePicUrl={this.props.loadCurrentUserImage}
             />
           </div>
