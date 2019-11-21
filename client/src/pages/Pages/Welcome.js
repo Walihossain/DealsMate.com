@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Header from "../Components/Layouts/Header";
+import HeaderWrapper from "../Components/Layouts/HeaderWrapper";
 // import BackgroundImage from "../../assets/landingBackground.jpg";
 import BackgroundImage from "../../assets/landingBackground1.jpg";
 import BackgroundImageTwo from "../../assets/landingBackground2.jpg";
@@ -28,7 +28,7 @@ class Welcome extends React.Component {
     return (
       <Fragment>
         <div className="landingImg" style={styles}>
-          <Header {...this.props} />
+          <HeaderWrapper {...this.props} />
           <div className="landingTitle">
             <h1> Welcome to DealsMate.com</h1>
             <h4>Track, Save & Win! </h4>
