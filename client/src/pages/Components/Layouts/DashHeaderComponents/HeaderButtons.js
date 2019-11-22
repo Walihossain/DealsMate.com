@@ -5,7 +5,8 @@ import Badge from "@material-ui/core/Badge";
 
 const containerStyle = {
   display: "flex",
-  alignItems: "center"
+  alignItems: "center",
+  flexWrap: "wrap"
 };
 
 const HeaderButtons = props => {

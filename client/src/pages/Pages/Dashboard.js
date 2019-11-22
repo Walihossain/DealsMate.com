@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
-import DashHeader from "../Components/Layouts/DashHeader";
+import DashHeaderWrapper from "../Components/Layouts/DashHeaderWrapper";
 import AddItem from "../Components/AddItem/AddItem";
 import ShoppingList from "../Components/ShoppingList/ShoppingList";
 import { connect } from "react-redux";
@@ -38,7 +38,7 @@ class DashBoardApp extends Component {
 
     return (
       <div>
-        <DashHeader {...this.props} />
+        <DashHeaderWrapper {...this.props} />
         <AddItem store={store} shoppingList={this.state.shoppingList} />
         <ShoppingList
           onSubmit={this.componentDidMount.bind(this)}

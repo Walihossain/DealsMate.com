@@ -6,7 +6,7 @@ const styleContainer = {
   display: "flex",
   alignItems: "center",
   color: "black",
-  paddingLeft: "50px"
+  paddingLeft: "0px"
 };
 
 const stylePic = {
