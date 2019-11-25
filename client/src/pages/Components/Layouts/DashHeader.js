@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
   sectionMobile: {
     display: "flex",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       display: "none"
     }
   }
@@ -124,7 +124,7 @@ export default function DashHeader(props) {
             <img
               src={logo}
               alt="logo"
-              style={{ height: "auto", width: "300px", paddingLeft: "50px" }}
+              style={{ height: "auto", width: "300px", paddingLeft: "20px" }}
             />
           </Typography>
 
