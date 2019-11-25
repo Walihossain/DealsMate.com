@@ -16,7 +16,13 @@ const styles = theme => ({
     minWidth: "45vw",
     maxWidth: "45vw",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "auto",
+      maxHeight: "85vh",
+      minWidth: "88vw",
+      maxWidth: "90vw"
+    }
   },
   formWidth: {
     width: "100%",
