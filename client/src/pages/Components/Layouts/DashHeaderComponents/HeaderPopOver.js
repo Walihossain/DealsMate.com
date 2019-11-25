@@ -74,7 +74,7 @@ export default function HeaderPopOver(props) {
             return (
               <Typography key={index} className={classes.typography}>
                 <div>
-                  <div className="EachItem-Container">
+                  <div className="EachItem-Notification-Container">
                     <div className="EachItem-img-container">
                       {item.imageUrl && (
                         <img
@@ -85,7 +85,7 @@ export default function HeaderPopOver(props) {
                       )}
                     </div>
                     <div>
-                      <span className="EachItem-name">
+                      <span className="EachItem-Notif-name">
                         {item.itemName && <p id="name">{item.itemName}</p>}
                         {item.itemUrl && <p id="link">{item.itemUrl}</p>}
                         <span className="EachItem-price">

@@ -1,4 +1,4 @@
-.EachItem-Container {
+.EachItem-Notification-Container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -27,13 +27,13 @@
   height: 80px;
 }
 
-.EachItem-name p {
+.EachItem-Notif-name p {
   margin: 5px 10px 5px 15px;
   /* margin-bottom: 5px; */
   text-align: left;
 }
 
-.EachItem-name #name {
+.EachItem-Notif-name #name {
   font-weight: bold;
   font-size: 1.1em;
   width: 400px;
@@ -42,7 +42,7 @@
   text-overflow: ellipsis;
 }
 
-.EachItem-name #link {
+.EachItem-Notif-name #link {
   font-weight: 300;
   font-size: 0.85em;
   color: gray;
@@ -51,6 +51,15 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 500px) {
+  .EachItem-Notif-name #name {
+    width: 200px;
+  }
+  .EachItem-Notif-name #link {
+    width: 125px;
+  }
 }
 
 .EachItem-price {
