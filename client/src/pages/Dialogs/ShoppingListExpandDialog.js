@@ -27,7 +27,13 @@ const styles = theme => ({
     textAlign: "center",
     margin: "10px",
     padding: 20,
-    backgroundColor: "#FBFCFF"
+    backgroundColor: "#FBFCFF",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "auto",
+      maxHeight: "80vh",
+      minWidth: "80vw",
+      maxWidth: "85vw"
+    }
   },
   formWidth: {
     width: "100%",

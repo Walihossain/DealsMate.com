@@ -14,14 +14,20 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = theme => ({
   dialogPaper: {
-    minHeight: "55vh",
-    maxHeight: "60vh",
+    minHeight: "45vh",
+    maxHeight: "50vh",
     minWidth: "45vw",
     maxWidth: "45vw",
     display: "flex",
     textAlign: "center",
     margin: "10px",
-    padding: 20
+    padding: 20,
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "45vh",
+      maxHeight: "80vh",
+      minWidth: "80vw",
+      maxWidth: "85vw"
+    }
   },
   formWidth: {
     width: "100%",
@@ -35,7 +41,10 @@ const styles = theme => ({
     fontWeight: 600
   },
   FormControl: {
-    width: "60%"
+    width: "60%",
+    [theme.breakpoints.down("sm")]: {
+      width: "85%"
+    }
   },
   textFieldDropdown: {
     marginLeft: theme.spacing(1),
@@ -48,8 +57,13 @@ const styles = theme => ({
   buttonStyles: {
     width: "200px",
     background: "#DF1B1B",
-    marginTop: "35px",
-    color: "white"
+    marginTop: "25px",
+    marginBottom: "15px",
+    color: "white",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "30px",
+      marginBottom: "20px"
+    }
   },
   root: {
     height: "45px"

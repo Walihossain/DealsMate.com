@@ -98,7 +98,6 @@ export default withStyles(styles)(
         });
     };
 
-    
     render() {
       const {
         open,
@@ -115,7 +114,7 @@ export default withStyles(styles)(
           <Button
             variant="contained"
             color="secondary"
-            style={{ background: "#aa1717", margin: "20px" }}
+            style={{ background: "#aa1717", margin: "5px" }}
             onClick={this.handleToggle.bind(this)}
             mini
           >

@@ -81,6 +81,12 @@ export default function PrimarySearchAppBar(props) {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      PaperProps={{
+        style: {
+          height: "130px",
+          width: "130px"
+        }
+      }}
     >
       <MenuItem>
         <Signup

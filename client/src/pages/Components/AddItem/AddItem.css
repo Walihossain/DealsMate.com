@@ -20,6 +20,12 @@
   border-radius: 30px;
 }
 
+@media only screen and (max-width: 500px) {
+  .additem-first-input {
+    width: 85%;
+  }
+}
+
 .additem-link-input {
   flex-grow: 2;
   width: 30%;

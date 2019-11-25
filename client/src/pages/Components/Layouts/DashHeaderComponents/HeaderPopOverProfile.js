@@ -82,8 +82,8 @@ export default function HeaderPopOver(props) {
         }}
         PaperProps={{
           style: {
-            maxHeight: 75 * 3.5,
-            width: "25%"
+            maxHeight: "20%",
+            width: "20%"
           }
         }}
         className="MuiPaper-root.MuiPaper-elevation8.MuiPopover-paper.MuiPaper-rounded"

@@ -21,7 +21,13 @@ const styles = theme => ({
     display: "flex",
     textAlign: "center",
     margin: "10px",
-    padding: 20
+    padding: 20,
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "auto",
+      maxHeight: "80vh",
+      minWidth: "80vw",
+      maxWidth: "85vw"
+    }
   },
   formWidth: {
     width: "100%",
@@ -144,12 +150,7 @@ class NewItem extends React.Component {
 
     // this.props.sendURL(userData, headers);
 
-    apiCallWithHeader(
-      "post",
-      `/item/${type}`,
-      userData,
-      headers
-    ).then(() => {
+    apiCallWithHeader("post", `/item/${type}`, userData, headers).then(() => {
       this.setState({ loading: false, addClicked: true });
     });
     // .then(() => {

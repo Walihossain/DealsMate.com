@@ -22,7 +22,13 @@ const styles = theme => ({
     display: "flex",
     textAlign: "center",
     margin: "10px",
-    padding: 20
+    padding: 20,
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "auto",
+      maxHeight: "80vh",
+      minWidth: "80vw",
+      maxWidth: "85vw"
+    }
   },
   formWidth: {
     width: "100%",

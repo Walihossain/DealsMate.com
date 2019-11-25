@@ -56,7 +56,9 @@ class EachItemInList extends Component {
           <div>
             <span className="EachItem-name">
               <p id="name">{this.props.name}</p>
-              <p id="link">{this.props.link}</p>
+              <a id="linkWrapper" href={this.props.link}>
+                <p id="link">{this.props.link}</p>
+              </a>
               <span className="EachItem-price">
                 <p id="oldPrice">{this.props.oldPrice}</p>
                 <p id="newPrice">{this.props.newPrice}</p>
