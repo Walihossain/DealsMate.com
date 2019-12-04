@@ -39,9 +39,9 @@ An AWS account and an S3 bucket
 Do not use your root account's credentials for this (or any) app. Create a new user with permissions only for the specific S3 bucket
 For the S3 bucket, make sure to enable public access. Change the CORS configuration of the bucket to allow GET requests from any origin and PUT requests from http://localhost:3000 (and your production url if any). More info here
 
-## Environment Variables
 
 ## Authors
+
 Manpreet Kaur
 
 Wali Navid Hossain
