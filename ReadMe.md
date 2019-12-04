@@ -42,6 +42,6 @@ For the S3 bucket, make sure to enable public access. Change the CORS configurat
 ## Environment Variables
 
 ## Authors
+Manpreet Kaur
 
-Manpreet Kauar
 Wali Navid Hossain
