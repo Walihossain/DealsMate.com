@@ -3,6 +3,7 @@
 A website that users helps users track the latest deals on e-commerce websites. Currently configured to track prices from Amazon.ca and Amazon.com. Send user notification when there is a price change!
 
 A live demo can be found here
+https://dealsmate.herokuapp.com/
 
 ## Features
 
@@ -36,8 +37,7 @@ Web Scraping using Puppeteer
    * Can install a local database by downloading mongodb from https://www.mongodb.com/ and have it run before starting up the server and  client
    * Can create an online database for free at https://mlab.com/
 * An AWS account and an S3 bucket
-* Do not use your root account's credentials for this (or any) app. Create a new user with permissions only for the specific S3 bucket
-   For the S3 bucket, make sure to enable public access. Change the CORS configuration of the bucket to allow GET requests from any        origin and PUT requests from http://localhost:3000 (and your production url if any). More info here
+   * Do not use your root account's credentials for this (or any) app. Create a new user with permissions only for the specific S3            bucket For the S3 bucket, make sure to enable public access. Change the CORS configuration of the bucket to allow GET requests          from any origin and PUT requests from http://localhost:3000 (and your production url if any). More info here
 
 
 ## Authors
